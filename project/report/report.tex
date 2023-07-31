@@ -198,8 +198,11 @@ Unfortunately, it was not possible to test the parallel execution time for large
 
 \subsection{Possible improvements}
 
-The parallel implementation could be improved by further increasing the amount of threads used per matrix multiplication by also parallelising the last for loop.
-Also, shared memory should be used to decrease the memory access time.
+\begin{itemize}
+    \item{The parallel implementation could be improved by further increasing the amount of threads used per matrix multiplication by also parallelising the last for loop.}
+    \item{Storing the value of the first operand matrix in shared memory}
+    \item{Using the tensor cores available in modern Nvidia GPUs}
+\end{itemize}
 
 
 \section{Summary}
@@ -207,8 +210,8 @@ Parallelizing the feed forward calculation of ANNs is necessary to quickly calcu
 Unfortunately more efficient matrix multiplication algorithms are not suited in the case of the feed forward calculation. Thus one has to parallelize the trivial
 matrix multiplication algorithm.
 It was shown, that a parallel implementation drastically improves the execution time for large layer sizes of the ANN.
-One should keep in mind that the execution time of the serial implementation is faster for small layer sizes. It's recommended to choose one of the two algorithms dynamically
-based on the sizes of the layers to compute the current feed forward iteration for.
+One should keep in mind that the execution time of the serial implementation is faster for small layer sizes. Therefore it's recommended to choose one of the two algorithms dynamically
+based on the sizes of the layers to compute the current feed forward iteration.
 
 \end{document}
 
