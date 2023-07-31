@@ -200,7 +200,7 @@ Unfortunately, it was not possible to test the parallel execution time for large
 
 \begin{itemize}
     \item{The parallel implementation could be improved by further increasing the amount of threads used per matrix multiplication by also parallelising the last for loop.}
-    \item{Storing the value of the first operand matrix in shared memory}
+    \item{Storing the value of the first operand matrix in shared memory. The values from the second operand matrix are only used once, so it would be a decrease in performance to copy them to shared memory}
     \item{Using the tensor cores available in modern Nvidia GPUs}
 \end{itemize}
 
